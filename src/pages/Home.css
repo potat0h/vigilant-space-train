@@ -1,0 +1,60 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home button {
+  width: 60px;
+}
+
+body.dark .home button {
+  background-color: black;
+  color: white;
+}
+
+.home p {
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+body.dark .home p {
+  background-color: black;
+  color: white;
+}
+
+.home ion-button {
+  width: 60px;
+  margin: 5px;
+}
+
+body.dark .home ion-button {
+  background-color: black;
+  color: white;
+}
+
+.home ion-input {
+  width: 200px;
+  margin: 15px 0;
+  --padding-start: 15px;
+  --padding-end: 15px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --border-radius: 8px;
+  --background: rgba(255, 255, 255, 0.9);
+  --color: black;
+  --placeholder-color: #666;
+  font-size: 1.1em;
+}
+
+body.dark .home ion-input {
+  --background: rgba(0, 0, 0, 0.8);
+  --color: white;
+  --placeholder-color: rgba(255, 255, 255, 0.7);
+}

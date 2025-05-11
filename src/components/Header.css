@@ -1,0 +1,57 @@
+ion-header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffa500;
+  color: black;
+}
+
+
+ion-header .header-title {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+
+ion-header .header-icons {
+  display: flex;
+}
+
+
+ion-header ion-icon {
+  font-size: 24px;
+}
+
+
+ion-header .icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+
+ion-header .icon-button:hover {
+  opacity: 0.5;
+}
+
+
+ion-header .dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+
+ion-header .dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+ion-header .dropdown-item:hover {
+  background-color: #f0f0f0;
+}

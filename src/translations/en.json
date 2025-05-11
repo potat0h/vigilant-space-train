@@ -1,0 +1,9 @@
+{
+  "home.up": "UP",
+  "home.down": "DOWN",
+  "home.typeName": "Type name",
+  "home.anonymous": "Anonymous",
+  "success.congratulations": "you have successfully completed 10 steps.",
+  "header.resetCounter": "Reset counter",
+  "header.changeLanguage": "Change language"
+}

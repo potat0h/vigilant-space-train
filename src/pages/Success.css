@@ -1,0 +1,16 @@
+.success p {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(0, 128, 0, 0.8);
+  color: white;
+}
+
+body.dark .success p {
+  background-color: rgba(0, 128, 0, 0.6);
+  color: white;
+}
+
+body:not(.dark) .success p {
+  background-color: rgba(0, 128, 0, 0.8);
+  color: white;
+}

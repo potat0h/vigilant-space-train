@@ -1,0 +1,9 @@
+{
+  "home.up": "GORE",
+  "home.down": "DOLJE",
+  "home.typeName": "Upišite ime",
+  "home.anonymous": "Anoniman",
+  "success.congratulations": "uspješno ste napravili 10 koraka.",
+  "header.resetCounter": "Resetiraj brojač",
+  "header.changeLanguage": "Promjeni jezik"
+}
