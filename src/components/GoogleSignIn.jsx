@@ -1,17 +1,32 @@
-import { signInWithPopup } from "firebase/auth";
+import { signInWithPopup, signOut } from "firebase/auth";
 import GoogleButton from "react-google-button";
 import { auth, provider } from "../../firebase";
+import { useTranslation } from "react-i18next";
+import { useIonAlert } from "@ionic/react";
 
-const GoogleSignIn = () => {
+export default function GoogleSignIn() {
+  const { t } = useTranslation();
+  const [presentAlert] = useIonAlert();
+
   const handleSignIn = () => {
     signInWithPopup(auth, provider)
-      .then(() => {})
+      .then((result) => {
+        const userDomain = result.user.email.split("@")[1];
+        if (userDomain != "gmail.com") {
+          signOut(auth);
+          presentAlert({
+            header: t("alert"),
+            message: t("google_sign_in.only_with_gmail"),
+            buttons: [t("ok")],
+          });
+        }
+      })
       .catch((error) => {
         console.log(error);
       });
   };
 
-  return <GoogleButton onClick={handleSignIn} />;
-};
-
-export default GoogleSignIn;
+  return (
+    <GoogleButton label={t("google_sign_in.login")} onClick={handleSignIn} />
+  );
+}

@@ -8,7 +8,7 @@ import { db } from "../../firebase.js";
 import { collection, addDoc } from "firebase/firestore";
 
 export default function Home() {
-  const { count, setCount } = useContext(AppContext);
+  const { username, count, setCount } = useContext(AppContext);
   const [name, setName] = useState("");
   const history = useHistory();
   const { t } = useTranslation();
@@ -16,9 +16,9 @@ export default function Home() {
   const addNameToFirestore = async () => {
     try {
       await addDoc(collection(db, "success_list"), {
-        name: name,
+        name: username,
       });
-      console.log("Document written: ", name);
+      console.log("Document written: ", username);
     } catch (error) {
       console.error("Error adding document: ", error);
     }
@@ -29,11 +29,11 @@ export default function Home() {
     localStorage.setItem("count", count);
     if (count === 10) {
       setCount(0);
-      if (name && name !== "") {
+      if (username && username !== "") {
         addNameToFirestore();
       }
       history.push("/success", {
-        name: name || t("home.anonymous"),
+        name: username || t("home.anonymous"),
         isNew: true,
       });
     }
@@ -55,14 +55,18 @@ export default function Home() {
       <div>
         <IonButton onClick={up}>{t("home.up")}</IonButton>
         <IonButton onClick={down}>{t("home.down")}</IonButton>
+        {username ? <p>{username}</p> : <p>{t("please_login")}</p>}
       </div>
-      <IonInput
+      
+
+      
+    </div>
+  );
+}
+/* <IonInput
         fill="solid"
         labelPlacement="floating"
         label={t("home.typeName")}
         value={name}
         onIonChange={(e) => setName(e.detail.value)}
-      />
-    </div>
-  );
-}
+      /> */

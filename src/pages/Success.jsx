@@ -4,8 +4,12 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useRef } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase.js";
+import { AppContext } from "../AppContext";
+import { useContext } from "react";
 
 export default function Success() {
+  const { username } = useContext(AppContext);
+
   const location = useLocation();
   const history = useHistory();
   const name = location.state?.name;
@@ -47,7 +51,13 @@ export default function Success() {
   return (
     <div className="success center">
       <p>
-        {name}, {t("success.congratulations")}
+        {username ? (
+          <p>
+            {username}, {t("success.congratulations")}
+          </p>
+        ) : (
+          <p>{t("please_login")}</p>
+        )}
       </p>
     </div>
   );

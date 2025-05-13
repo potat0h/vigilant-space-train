@@ -1,9 +1,17 @@
 {
+  "alert": "Alert",
+  "ok": "Ok",
+  "please_login": "Please login",
+  "loading": "Loading...",
   "home.up": "UP",
   "home.down": "DOWN",
   "home.typeName": "Type name",
   "home.anonymous": "Anonymous",
   "success.congratulations": "you have successfully completed 10 steps.",
   "header.resetCounter": "Reset counter",
-  "header.changeLanguage": "Change language"
+  "header.changeLanguage": "Change language",
+  "success_list.delete_all": "Delete all",
+  "google_sign_in.login": "Login",
+  "google_log_out.logout": "Logout",
+  "google_sign_in.only_with_gmail": "Sign in possible only with gmail.com domain."
 }
