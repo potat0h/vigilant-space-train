@@ -1,8 +1,12 @@
 import { createContext, useState, useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 
 export const AppContext = createContext();
 
 export function AppContextProvider({ children }) {
+  const [username, setUsername] = useState(null);
+
   const [count, setCount] = useState(() => {
     // Clear stored count on page load/refresh to prevent Success from showing
     localStorage.removeItem("count");
@@ -21,6 +25,17 @@ export function AppContextProvider({ children }) {
       : isDarkModeStored === "true";
   });
 
+  // Firebase Authentication
+  useEffect(() => {
+    const unregisterAuthObserver = onAuthStateChanged(
+      getAuth(),
+      async (result) => {
+        setUsername(result ? result.email.split("@")[0] : null);
+        console.log("AppContext > username = ", username);
+      }
+    );
+  }, []);
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handler = (e) => setIsDarkMode(e.matches);
@@ -37,6 +52,8 @@ export function AppContextProvider({ children }) {
   return (
     <AppContext.Provider
       value={{
+        username,
+        setUsername,
         count,
         setCount,
         isDarkMode,

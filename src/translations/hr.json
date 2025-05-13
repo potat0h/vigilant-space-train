@@ -1,9 +1,17 @@
 {
+  "alert": "Upozorenje",
+  "ok": "U redu",
+  "please_login": "Prijavite se",
+  "loading": "Učitavanje...",
   "home.up": "GORE",
   "home.down": "DOLJE",
   "home.typeName": "Upišite ime",
   "home.anonymous": "Anoniman",
   "success.congratulations": "uspješno ste napravili 10 koraka.",
   "header.resetCounter": "Resetiraj brojač",
-  "header.changeLanguage": "Promjeni jezik"
+  "header.changeLanguage": "Promjeni jezik",
+  "success_list.delete_all": "Obriši sve",
+  "google_sign_in.login": "Prijava",
+  "google_log_out.logout": "Odjava",
+  "google_sign_in.only_with_gmail": "Prijava moguća samo s gmail.com domenom."
 }
